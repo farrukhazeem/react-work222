@@ -23,9 +23,9 @@ class Subscriptions extends Component {
             body: JSON.stringify ({email})
         }).then(res=>res.json())
         .then(()=>{
-            this.setState ={
+            this.setState({
                 email:''
-            }
+            })
         })
 }
 
@@ -36,8 +36,6 @@ class Subscriptions extends Component {
 
         if (regex.test(email)){
             this.saveSubsciption(email)
-        } else {
-
         }
     
     
@@ -45,9 +43,7 @@ class Subscriptions extends Component {
 onChangeInput = (event) => {
     this.setState({
         email: event.target.value
-    
     })
-console.log(event.target.value)
 }
 
     render() {
@@ -57,7 +53,7 @@ console.log(event.target.value)
           
               <form onSubmit={this.handleSubmit}>
                   <input type="text"
-                      placeholder="Your Email Id"
+                      placeholder="email@email.com"
                       value={this.state.email}
                       onChange={this.onChangeInput}
                   />
